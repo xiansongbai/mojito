@@ -20,7 +20,7 @@ class AdminUser extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'phone', 'password',
     ];
 
     /**
@@ -31,4 +31,9 @@ class AdminUser extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function findForPassport($username)
+    {
+        return  $this->where('phone', $username)->first();;
+    }
 }
