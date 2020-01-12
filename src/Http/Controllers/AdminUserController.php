@@ -31,7 +31,7 @@ class AdminUserController extends Controller
      */
     public function index(Request $request)
     {
-        return new AdminUserCollection($this->adminUserModel->where(request_intersect(['name', 'email']))->paginate());
+        return new AdminUserCollection($this->adminUserModel->where(request_intersect(['name', 'phone']))->paginate());
     }
 
     /**

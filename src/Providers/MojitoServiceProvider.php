@@ -42,7 +42,9 @@ class MojitoServiceProvider extends ServiceProvider
             ], 'views');
         }
 
-        $this->registerRouter();
+        if (config('mojito.is_register_router')) {
+            $this->registerRouter();
+        }
     }
 
     /**
