@@ -52,7 +52,7 @@ class AdminUserController extends Controller
     public function store(CreateOrUpdateRequest $request)
     {
         $data = request_intersect([
-            'name', 'email', 'password'
+            'name', 'phone', 'password'
         ]);
         $data['password'] = bcrypt($data['password']);
 

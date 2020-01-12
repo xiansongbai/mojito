@@ -33,7 +33,7 @@ class CreateOrUpdateRequest extends FormRequest
         switch ($this->method()) {
             case 'POST':
                 $rules['password'] = 'required|min:8|max:32';
-                $rules['phone'] = 'required|numeric|size:11|unique:' . AdminUserFactory::adminUser()->getTable();
+                $rules['phone'] = 'required|string|size:11|unique:' . AdminUserFactory::adminUser()->getTable();
                 break;
             case 'PATCH':
                 $rules['password'] = 'min:8|max:32';
